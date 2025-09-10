@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Korean Learning Platform Design System */
+
+@layer base {
+  :root {
+    /* Korean-inspired color palette */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 15%;
+    
+    /* Sakura pink theme */
+    --primary: 330 50% 55%;
+    --primary-light: 330 60% 75%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Soft blue accents */
+    --secondary: 210 80% 90%;
+    --secondary-foreground: 210 80% 30%;
+    
+    /* Muted tones */
+    --muted: 210 40% 96%;
+    --muted-foreground: 240 5% 50%;
+    
+    /* Card backgrounds */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+    
+    /* Interactive elements */
+    --accent: 150 60% 88%;
+    --accent-foreground: 150 60% 25%;
+    
+    /* Destructive (errors) */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 210 20% 90%;
+    --input: 210 20% 95%;
+    --ring: 330 50% 55%;
+    
+    /* Success and completion */
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning */
+    --warning: 40 90% 60%;
+    --warning-foreground: 40 90% 20%;
+    
+    /* Korean culture inspired gradients */
+    --gradient-sakura: linear-gradient(135deg, hsl(330 60% 75%) 0%, hsl(340 70% 85%) 100%);
+    --gradient-sky: linear-gradient(135deg, hsl(210 80% 90%) 0%, hsl(220 70% 95%) 100%);
+    --gradient-learning: linear-gradient(135deg, hsl(330 50% 55%) 0%, hsl(210 80% 70%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(330 50% 55% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(330 50% 55% / 0.2);
+    --shadow-floating: 0 12px 40px -12px hsl(330 50% 55% / 0.25);
+    
+    /* Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Spacing scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark theme for Korean learning platform */
+    --background: 240 15% 8%;
+    --foreground: 210 40% 95%;
+    
+    --primary: 330 60% 65%;
+    --primary-light: 330 70% 80%;
+    --primary-foreground: 240 15% 8%;
+    
+    --secondary: 210 60% 25%;
+    --secondary-foreground: 210 80% 85%;
+    
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+    
+    --card: 240 12% 10%;
+    --card-foreground: 210 40% 95%;
+    
+    --accent: 150 40% 25%;
+    --accent-foreground: 150 60% 85%;
+    
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 240 8% 20%;
+    --input: 240 8% 18%;
+    --ring: 330 60% 65%;
+    
+    --success: 120 50% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 40 80% 55%;
+    --warning-foreground: 40 90% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-[var(--font-body)] antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-[var(--font-heading)];
+  }
+}
+
+@layer components {
+  /* Korean Learning Platform Components */
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground 
+           shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)]
+           transition-[var(--transition-smooth)] hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border
+           hover:bg-secondary/80 transition-[var(--transition-smooth)];
+  }
+  
+  .card-learning {
+    @apply bg-card border border-border rounded-[var(--radius)]
+           shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-floating)]
+           transition-[var(--transition-smooth)] hover:scale-[1.02];
+  }
+  
+  .gradient-sakura {
+    background: var(--gradient-sakura);
+  }
+  
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+  
+  .gradient-learning {
+    background: var(--gradient-learning);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-learning);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
